@@ -3,7 +3,7 @@
 Seeka provides you with a solution to easily offer users the
 ability to filter and search for things.
 
-![Screenshot](https://s.adamcooke.io/15/6QFQER.png)
+![Screenshot](https://s.adamcooke.io/15/mSTriw.png)
 
 This is still very much in development as part of a new project
 I'm working on. It provides a Ruby interface to define which fields
