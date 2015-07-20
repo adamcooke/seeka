@@ -219,9 +219,18 @@ class Seeka.Form
       # invalid
 
 $ ->
-  if seekaDefinition? && $('form.seeka__form').length
-    form = new Seeka.Form
-    form.definition = seekaDefinition
-    form.query = if seekaQuery? then seekaQuery else {}
-    form.form = $('form.seeka__form')
-    form.setup()
+
+  definitionJSONContainer = $('#seekaDefinitionJSON')
+  if definitionJSONContainer.length
+    seekaDefinition = JSON.parse(definitionJSONContainer.text())
+    if seekaDefinition? && $('form.seeka__form').length
+
+      queryJSONContainer = $('#seekaQueryJSON')
+      if queryJSONContainer.length
+        seekaQuery = JSON.parse(queryJSONContainer.text())
+
+      form = new Seeka.Form
+      form.definition = seekaDefinition
+      form.query = if seekaQuery? then seekaQuery else {}
+      form.form = $('form.seeka__form')
+      form.setup()
