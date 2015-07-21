@@ -61,6 +61,10 @@ module Seeka
           Arel::Nodes::NamedFunction.new('TIMESTAMPDIFF', [Arel::Nodes::SqlLiteral.new('DAY'), arel_table[field], Arel::Nodes::SqlLiteral.new('UTC_TIMESTAMP()')])
         when :sum
           Arel::Nodes::NamedFunction.new('SUM', [arel_table[field]])
+        when :upper
+          Arel::Nodes::NamedFunction.new('UPPER', [arel_table[field]])
+        when :lower
+          Arel::Nodes::NamedFunction.new('LOWER', [arel_table[field]])
         else
           arel_table[field]
         end
@@ -70,14 +74,16 @@ module Seeka
       # Return the actual value to search on
       #
       def transmogrified_value
-
-        Rails.logger.info param.field.inspect
         case param.field.options[:value_transmogrification]
         when :chronic
           Chronic.parse(value, :context => :past)
         when :chronic_date
           v = Chronic.parse(value, :context => :past)
           v ? v.to_date : nil
+        when :upcase
+          value.upcase
+        when :downcase
+          value.downcase
         else
           value
         end

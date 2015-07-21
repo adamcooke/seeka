@@ -13,6 +13,11 @@ module Seeka
       options[:value_transmogrification] ||= :none
       options[:input_type] ||= 'string'
       options[:select_options] ||= []
+
+      if options[:case_insensitive] || options[:ci]
+        options[:transmogrification] = :lower
+        options[:value_transmogrification] = :downcase
+      end
     end
 
     attr_reader :name, :options
