@@ -7,7 +7,7 @@ module Seeka
         if query.is_a?(Seeka::Query)
           html << "<script id='seekaQueryJSON' type='application/json'>#{query.to_json}</script>"
         end
-        html << form_tag(url, {:class => 'seeka__form'}.merge(options)) + "</form>".html_safe
+        html << form_tag(url, {:class => options.fetch(:class, 'seeka_form')}.merge(options)) + "</form>".html_safe
       end.join("\n").html_safe
     end
 
