@@ -116,7 +116,7 @@ module Seeka
       # condition type.
       #
       def self.available_operators
-        [:equals, :does_not_equal, :contains, :does_not_contain, :starts_with, :ends_with, :greater_than, :greater_than_or_equal_to, :less_than, :less_than_or_equal_to, :in, :not_in, :blank, :not_blank]
+        [:contains, :equals, :does_not_equal, :does_not_contain, :starts_with, :ends_with, :greater_than, :greater_than_or_equal_to, :less_than, :less_than_or_equal_to, :in, :not_in, :blank, :not_blank]
       end
 
     end
