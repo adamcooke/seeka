@@ -61,7 +61,7 @@ module Seeka
 
     def available_operators
       available_operators ||= begin
-        condition.available_operators.map do |o|
+        options[:operators].map do |o|
           translations = I18n.translate('seeka.operators', :default => {})
           {:key => o, :label => translations[o.to_sym] || o.to_s.humanize.downcase}
         end
