@@ -226,7 +226,7 @@ class Seeka.Form
 
       # If the last object isn't a blank one any more, let's add a spare
       # so it can be used
-      if $otherConditions.length == 1 || $link.parents('ul').find("li:last select.#{@classNames.operatorSelect}").length > 0
+      if $otherConditions.length == 1 || $link.parents('ul').find("li:last .#{@classNames.operatorSelect}").length > 0
         @addEmptyCondition($link.parents('fieldset')[0])
     else
       # if we have more than one condition left, just remove this object,
