@@ -26,7 +26,7 @@ module Seeka
         when :contains
           arel_field.matches("%#{transmogrified_value}%")
         when :does_not_contain
-          arel_field.does_not_contain("%#{transmogrified_value}%")
+          arel_field.does_not_match("%#{transmogrified_value}%")
         when :starts_with
           arel_field.matches("#{transmogrified_value}%")
         when :ends_with
