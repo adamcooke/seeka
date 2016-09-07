@@ -107,6 +107,7 @@ class Seeka.Form
     $('a[data-behavior=seekaAddConditionGroup]', @form).on 'click', =>
       conditionGroup = @addConditionGroup(@)
       @addEmptyCondition(conditionGroup)
+      false
 
     # Initial set up of the form
     if Object.getOwnPropertyNames(@query).length
